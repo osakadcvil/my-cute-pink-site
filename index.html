@@ -48,12 +48,12 @@
       <div class="music-player">
         <h2>🎵 Music Corner</h2>
         <ul id="playlist">
-          <li data-src="supernatural.mp3">🌸Ariana - Supernatural</li>
-          <li data-src="ilikemebetter.mp3">🧁Lauv - I like me better</li>
-          <li data-src="youllbeinmyheart.mp3">💖NIKI - You'll be in my heart</li>
-          <li data-src="daylight.mp3">🩰Taylor Swift - Daylight</li>
-          <li data-src="onecallaway.mp3">🍥Charlie Puth - One call away</li>
-          <li data-src="anythingyouwant.mp3">🍧Reality Club - Anything you want</li>
+          <li data-src="assets/supernatural.mp3">🌸Ariana - Supernatural</li>
+          <li data-src="assets/ilikemebetter.mp3">🧁Lauv - I like me better</li>
+          <li data-src="assets/youllbeinmyheart.mp3">💖NIKI - You'll be in my heart</li>
+          <li data-src="assets/daylight.mp3">🩰Taylor Swift - Daylight</li>
+          <li data-src="assets/onecallaway.mp3">🍥Charlie Puth - One call away</li>
+          <li data-src="assets/anythingyouwant.mp3">🍧Reality Club - Anything you want</li>
         </ul>
 
         <!-- Kontrol Pemutar -->
@@ -86,6 +86,20 @@
     <p>Made with 💖 by Airis &copy; 2025</p>
   </footer>
   
+  <script>
+  const fadeEls = document.querySelectorAll('.fade-in');
+  function checkFade() {
+    fadeEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkFade);
+  window.addEventListener('load', checkFade);
+</script>
+
   <script src="pinkeuu.js"></script>
 </body>
 </html>

@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Cute Pink Website</title>
+
+  <!-- 🌸 Styles -->
   <link rel="stylesheet" href="pinkeuu.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <!-- 🌸 Header -->
   <header>
     <h1>✨ Airis' Digital Diaries ✨</h1>
     <p class="tagline">Sweet, Pink, and Magical.</p>
   </header>
 
+  <!-- 💗 Navigation -->
   <nav>
     <a href="#">Home</a>
     <a href="#">Gallery</a>
@@ -20,6 +25,7 @@
     <a href="#">Contact</a>
   </nav>
 
+  <!-- 🌷 Main Content -->
   <main>
     <section class="intro fade-in">
       <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute cat" />
@@ -31,39 +37,39 @@
     </section>
 
     <section class="cards">
-      <div class="card">
+      <div class="card fade-in">
         <h3>💅 Beauty</h3>
         <p>Skincare, art and all things cute.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <h3>🧸 Style</h3>
         <p>My outfit and fashion inspo.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <h3>📸 Aesthetic</h3>
         <p>Place, food and moments.</p>
       </div>
 
-      <!-- 🎵 Music Player Section -->
-      <div class="music-player">
+      <!-- 🎵 Music Player -->
+      <div class="music-player fade-in">
         <h2>🎵 Music Corner</h2>
         <ul id="playlist">
-          <li data-src="supernatural.mp3">🌸Ariana - Supernatural</li>
-          <li data-src="ilikemebetter.mp3">🧁Lauv - I like me better</li>
-          <li data-src="youllbeinmyheart.mp3">💖NIKI - You'll be in my heart</li>
-          <li data-src="daylight.mp3">🩰Taylor Swift - Daylight</li>
-          <li data-src="onecallaway.mp3">🍥Charlie Puth - One call away</li>
-          <li data-src="anythingyouwant.mp3">🍧Reality Club - Anything you want</li>
+          <li data-src="assets/supernatural.mp3">🌸 Ariana - Supernatural</li>
+          <li data-src="assets/ilikemebetter.mp3">🧁 Lauv - I Like Me Better</li>
+          <li data-src="assets/youllbeinmyheart.mp3">💖 NIKI - You'll Be In My Heart</li>
+          <li data-src="assets/daylight.mp3">🩰 Taylor Swift - Daylight</li>
+          <li data-src="assets/onecallaway.mp3">🍥 Charlie Puth - One Call Away</li>
+          <li data-src="assets/anythingyouwant.mp3">🍧 Reality Club - Anything You Want</li>
         </ul>
 
-        <!-- Kontrol Pemutar -->
+        <!-- Controls -->
         <div class="controls">
           <button id="prevBtn">⏮️ Prev</button>
           <button id="playPauseBtn">▶️ Play</button>
           <button id="nextBtn">⏭️ Next</button>
         </div>
 
-        <!-- Progress & Durasi -->
+        <!-- Progress -->
         <div class="progress-container">
           <span id="currentTime">0:00</span>
           <input type="range" id="progressBar" value="0" step="1" />
@@ -76,31 +82,18 @@
           <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" />
         </div>
 
-        <!-- Elemen Audio -->
+        <!-- Audio Element -->
         <audio id="audio"></audio>
       </div>
     </section>
   </main>
 
+  <!-- 💫 Footer -->
   <footer>
     <p>Made with 💖 by Airis &copy; 2025</p>
   </footer>
-  
-  <script>
-  const fadeEls = document.querySelectorAll('.fade-in');
-  function checkFade() {
-    fadeEls.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add('visible');
-      }
-    });
-  }
-  window.addEventListener('scroll', checkFade);
-  window.addEventListener('load', checkFade);
-</script>
 
+  <!-- 🌸 JavaScript -->
   <script src="pinkeuu.js"></script>
 </body>
 </html>
-

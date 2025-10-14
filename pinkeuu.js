@@ -1,4 +1,4 @@
-// Ambil elemen-elemen dari DOM
+// 🌷 Ambil elemen-elemen dari DOM
 const playlistItems = document.querySelectorAll('#playlist li');
 const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('playPauseBtn');
@@ -12,13 +12,13 @@ const volumeControl = document.getElementById('volumeControl');
 let currentTrack = 0;
 let isPlaying = false;
 
-// ✅ Pastikan semua elemen ada sebelum dipakai
+// ✅ Pastikan elemen-elemen ada sebelum digunakan
 if (audio && playlistItems.length > 0) {
-
   // 🎵 Fungsi Memutar Lagu
   function playSong(index) {
     const selected = playlistItems[index];
     if (!selected) return;
+
     const src = selected.dataset.src;
     if (!src) return;
 
@@ -29,14 +29,14 @@ if (audio && playlistItems.length > 0) {
     highlightPlaying(index);
   }
 
-  // 🔁 Fungsi Menandai Lagu Aktif
+  // 🔁 Menandai Lagu Aktif
   function highlightPlaying(index) {
     playlistItems.forEach((item, i) => {
       item.classList.toggle('active', i === index);
     });
   }
 
-  // ▶️ ⏸️ Play / Pause
+  // ▶️ / ⏸️ Tombol Play & Pause
   playPauseBtn.addEventListener('click', () => {
     if (!audio.src) {
       playSong(currentTrack);
@@ -51,19 +51,19 @@ if (audio && playlistItems.length > 0) {
     }
   });
 
-  // ⏭️ Next
+  // ⏭️ Tombol Next
   nextBtn.addEventListener('click', () => {
     currentTrack = (currentTrack + 1) % playlistItems.length;
     playSong(currentTrack);
   });
 
-  // ⏮️ Previous
+  // ⏮️ Tombol Previous
   prevBtn.addEventListener('click', () => {
     currentTrack = (currentTrack - 1 + playlistItems.length) % playlistItems.length;
     playSong(currentTrack);
   });
 
-  // 🔊 Volume Control
+  // 🔊 Kontrol Volume
   volumeControl.addEventListener('input', () => {
     audio.volume = volumeControl.value;
   });
@@ -78,18 +78,18 @@ if (audio && playlistItems.length > 0) {
     }
   });
 
-  // Geser progress bar untuk ubah posisi lagu
+  // Geser progress bar
   progressBar.addEventListener('input', () => {
     audio.currentTime = progressBar.value;
   });
 
-  // Auto-next lagu setelah selesai
+  // Auto-next lagu
   audio.addEventListener('ended', () => {
     currentTrack = (currentTrack + 1) % playlistItems.length;
     playSong(currentTrack);
   });
 
-  // Klik lagu dari playlist
+  // Klik langsung pada playlist
   playlistItems.forEach((item, index) => {
     item.addEventListener('click', () => {
       currentTrack = index;
@@ -98,23 +98,27 @@ if (audio && playlistItems.length > 0) {
   });
 }
 
-// 🔤 Format waktu (misal: 1:45)
+// 🔤 Format waktu (contoh: 1:45)
 function formatTime(seconds) {
   if (isNaN(seconds)) return '0:00';
   const m = Math.floor(seconds / 60);
   const s = Math.floor(seconds % 60).toString().padStart(2, '0');
   return `${m}:${s}`;
 }
-// 🌸 Fade-in saat scroll
+
+// 🌸 Fade-in saat elemen muncul
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // berhenti mengamati setelah terlihat
+    }
   });
 });
 fadeEls.forEach(el => observer.observe(el));
 
-// 💖 Floating hearts background
+// 💖 Floating Hearts Background
 const heartsContainer = document.createElement('div');
 heartsContainer.classList.add('hearts');
 document.body.appendChild(heartsContainer);

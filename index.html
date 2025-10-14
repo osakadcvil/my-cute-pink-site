@@ -65,4 +65,55 @@
         <!-- Controls -->
         <div class="controls">
           <button id="prevBtn">⏮️ Prev</button>
-          <b
+          <button id="playPauseBtn">▶️ Play</button>
+          <button id="nextBtn">⏭️ Next</button>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-container">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="progressBar" value="0" step="1" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-container">
+          Volume: 
+          <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" />
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="audio"></audio>
+      </div>
+    </section>
+
+    <!-- 🐇💖 Catch the Bunny Game Section -->
+    <section id="catch-bunny-section" class="fade-in">
+      <div class="game-container">
+        <h2>🐇 Catch the Bunny! 💕</h2>
+        <div class="game-stats">
+          <span>⏱️ Time Left: <b id="bunny-time">20</b>s</span>
+          <span>💖 Score: <b id="bunny-score">0</b></span>
+        </div>
+
+        <div id="bunny-area" class="bunny-area">
+          <!-- Bunny muncul di sini -->
+        </div>
+
+        <div class="game-buttons">
+          <button id="bunny-start" class="btn-pink">Mulai Bermain 🎀</button>
+          <button id="bunny-restart" class="btn-pink hidden">🔁 Main Lagi</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 💫 Footer -->
+  <footer>
+    <p>Made with 💖 by Airis &copy; 2025</p>
+  </footer>
+
+  <!-- 🌸 JavaScript -->
+  <script src="pinkeuu.js"></script>
+</body>
+</html>

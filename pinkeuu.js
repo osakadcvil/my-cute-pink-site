@@ -1,4 +1,4 @@
-// 🌷 Ambil elemen-elemen dari DOM
+// 🌷 Ambil elemen-elemen dari DOM (Music Player)
 const playlistItems = document.querySelectorAll('#playlist li');
 const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('playPauseBtn');
@@ -132,3 +132,99 @@ setInterval(() => {
   heartsContainer.appendChild(heart);
   setTimeout(() => heart.remove(), 7000);
 }, 900);
+
+
+
+// 🐰🎀 --- CATCH THE BUNNY MINI GAME ---
+const bunnyArea = document.getElementById('bunny-area');
+const startBtn = document.getElementById('bunny-start');
+const restartBtn = document.getElementById('bunny-restart');
+const timeEl = document.getElementById('bunny-time');
+const scoreEl = document.getElementById('bunny-score');
+
+let timeLeft = 20;
+let score = 0;
+let gameInterval;
+let timerInterval;
+
+function startGame() {
+  score = 0;
+  timeLeft = 20;
+  scoreEl.textContent = score;
+  timeEl.textContent = timeLeft;
+  startBtn.classList.add('hidden');
+  restartBtn.classList.add('hidden');
+  bunnyArea.innerHTML = '';
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timeEl.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+
+  gameInterval = setInterval(spawnBunny, 700);
+}
+
+function spawnBunny() {
+  const bunny = document.createElement('div');
+  bunny.classList.add('bunny');
+  const size = 60;
+  const maxX = bunnyArea.clientWidth - size;
+  const maxY = bunnyArea.clientHeight - size;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+  bunny.style.left = `${x}px`;
+  bunny.style.top = `${y}px`;
+
+  bunny.addEventListener('click', () => {
+    score++;
+    scoreEl.textContent = score;
+    bunny.remove();
+    createParticles(x + size / 2, y + size / 2);
+  });
+
+  bunnyArea.appendChild(bunny);
+
+  setTimeout(() => {
+    if (bunnyArea.contains(bunny)) bunny.remove();
+  }, 900);
+}
+
+function endGame() {
+  clearInterval(timerInterval);
+  clearInterval(gameInterval);
+  alert(`🎉 Waktu habis! Skormu: ${score} 💖`);
+  restartBtn.classList.remove('hidden');
+}
+
+function createParticles(x, y) {
+  for (let i = 0; i < 6; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    bunnyArea.appendChild(particle);
+
+    const dx = (Math.random() - 0.5) * 100;
+    const dy = (Math.random() - 0.5) * 100;
+
+    particle.animate(
+      [
+        { transform: `translate(0, 0) scale(1)`, opacity: 1 },
+        { transform: `translate(${dx}px, ${dy}px) scale(0)`, opacity: 0 },
+      ],
+      { duration: 600, easing: 'ease-out' }
+    );
+
+    setTimeout(() => particle.remove(), 600);
+  }
+}
+
+// 🩷 Jalankan game ketika tombol diklik
+if (startBtn && restartBtn && bunnyArea) {
+  startBtn.addEventListener('click', startGame);
+  restartBtn.addEventListener('click', startGame);
+}

@@ -105,3 +105,26 @@ function formatTime(seconds) {
   const s = Math.floor(seconds % 60).toString().padStart(2, '0');
   return `${m}:${s}`;
 }
+// 🌸 Fade-in saat scroll
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+});
+fadeEls.forEach(el => observer.observe(el));
+
+// 💖 Floating hearts background
+const heartsContainer = document.createElement('div');
+heartsContainer.classList.add('hearts');
+document.body.appendChild(heartsContainer);
+
+setInterval(() => {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.textContent = ['💖','💗','💞','💘','💝'][Math.floor(Math.random() * 5)];
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+  heartsContainer.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}, 900);

@@ -240,7 +240,7 @@ main {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
+  background: url('https://www.flaticon.com/free-icon/rabbit_3508887.png') no-repeat center/contain;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
@@ -392,4 +392,5 @@ button:active {
     padding: 1rem;
   }
 }
+
 

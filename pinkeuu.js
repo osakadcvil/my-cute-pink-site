@@ -1,5 +1,4 @@
 const playlistItems = document.querySelectorAll('#playlist li');
-const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('playPauseBtn');
 let currentTrack = 0;
 let isPlaying = false;
@@ -35,3 +34,4 @@ function playSong(src) {
   isPlaying = true;
   playPauseBtn.textContent = '⏸ Pause';
 }
+

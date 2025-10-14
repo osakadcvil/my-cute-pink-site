@@ -1,6 +1,6 @@
-/* 🌸 PINK EUU STYLESHEET 🌸
+/* 🌸 PINK EUU STYLESHEET + CATCH THE BUNNY 🌸
    Author: Fitriana Kusuma
-   Theme: Soft Pink Aesthetic
+   Theme: Soft Pink Aesthetic + Cute Mini Game
 */
 
 /* ===================================
@@ -205,6 +205,82 @@ main {
 }
 
 /* ===================================
+   🎮 CATCH THE BUNNY GAME
+=================================== */
+#catch-bunny {
+  margin: 3rem auto;
+  text-align: center;
+  background: #fff0f5;
+  border: 3px dashed #ffb6c1;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+#catch-bunny h2 {
+  font-family: 'Pacifico', cursive;
+  color: #d63384;
+  margin-bottom: 1rem;
+}
+
+#game-area {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: #ffe6f0;
+  border: 2px dotted #ffb6c1;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.bunny {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.bunny:active {
+  transform: scale(0.9);
+}
+
+#score {
+  font-size: 1.2rem;
+  color: #c71585;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#restart-btn {
+  padding: 10px 25px;
+  background-color: #ff99cc;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px #f48fb1;
+  transition: all 0.2s ease;
+}
+
+#restart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px #f48fb1;
+}
+
+#restart-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===================================
    FOOTER
 =================================== */
 footer {
@@ -300,6 +376,10 @@ button:active {
   .intro img {
     width: 140px;
   }
+
+  #game-area {
+    height: 280px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -309,5 +389,9 @@ button:active {
 
   nav a {
     padding: 0.5rem;
+  }
+
+  #catch-bunny {
+    padding: 1rem;
   }
 }

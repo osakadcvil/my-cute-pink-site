@@ -1,5 +1,4 @@
-/* 🌸 PINK STYLESHEET + CATCH THE BUNNY 🌸
-
+/* 🌸 PINK EUU STYLESHEET + CATCH THE BUNNY 🌸
 /* ===================================
    RESET DASAR
 =================================== */
@@ -238,15 +237,15 @@ main {
 
 .bunny {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background: url('https://www.flaticon.com/free-icon/rabbit_3508887.png') no-repeat center/contain;
+  width: 60px;
+  height: 60px;
+  background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
 
 .bunny:active {
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 
 #score {
@@ -392,6 +391,3 @@ button:active {
     padding: 1rem;
   }
 }
-
-
-

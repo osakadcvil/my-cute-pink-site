@@ -135,12 +135,12 @@ setInterval(() => {
 
 
 
-// 🐰🎀 --- CATCH THE BUNNY MINI GAME ---
-const bunnyArea = document.getElementById('bunny-area');
-const startBtn = document.getElementById('bunny-start');
-const restartBtn = document.getElementById('bunny-restart');
-const timeEl = document.getElementById('bunny-time');
-const scoreEl = document.getElementById('bunny-score');
+// 🐰🎀 --- CATCH THE DOG MINI GAME ---
+const dogArea = document.getElementById('dog-area');
+const startBtn = document.getElementById('dog-start');
+const restartBtn = document.getElementById('dog-restart');
+const timeEl = document.getElementById('dog-time');
+const scoreEl = document.getElementById('dog-score');
 
 let timeLeft = 20;
 let score = 0;
@@ -154,7 +154,7 @@ function startGame() {
   timeEl.textContent = timeLeft;
   startBtn.classList.add('hidden');
   restartBtn.classList.add('hidden');
-  bunnyArea.innerHTML = '';
+  dogArea.innerHTML = '';
 
   timerInterval = setInterval(() => {
     timeLeft--;
@@ -164,32 +164,32 @@ function startGame() {
     }
   }, 1000);
 
-  gameInterval = setInterval(spawnBunny, 700);
+  gameInterval = setInterval(spawnDog, 700);
 }
 
-function spawnBunny() {
-  const bunny = document.createElement('div');
-  bunny.classList.add('bunny');
+function spawnDog() {
+  const dog = document.createElement('div');
+  dog.classList.add('dog');
   const size = 60;
-  const maxX = bunnyArea.clientWidth - size;
-  const maxY = bunnyArea.clientHeight - size;
+  const maxX = dogArea.clientWidth - size;
+  const maxY = dogArea.clientHeight - size;
 
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
-  bunny.style.left = `${x}px`;
-  bunny.style.top = `${y}px`;
+  dog.style.left = `${x}px`;
+  dog.style.top = `${y}px`;
 
-  bunny.addEventListener('click', () => {
+  dog.addEventListener('click', () => {
     score++;
     scoreEl.textContent = score;
-    bunny.remove();
+    dog.remove();
     createParticles(x + size / 2, y + size / 2);
   });
 
-  bunnyArea.appendChild(bunny);
+  dogArea.appendChild(dog);
 
   setTimeout(() => {
-    if (bunnyArea.contains(bunny)) bunny.remove();
+    if (dogArea.contains(dog)) dog.remove();
   }, 900);
 }
 
@@ -206,7 +206,7 @@ function createParticles(x, y) {
     particle.classList.add('particle');
     particle.style.left = x + 'px';
     particle.style.top = y + 'px';
-    bunnyArea.appendChild(particle);
+    dogArea.appendChild(particle);
 
     const dx = (Math.random() - 0.5) * 100;
     const dy = (Math.random() - 0.5) * 100;
@@ -224,7 +224,8 @@ function createParticles(x, y) {
 }
 
 // 🩷 Jalankan game ketika tombol diklik
-if (startBtn && restartBtn && bunnyArea) {
+if (startBtn && restartBtn && dogArea) {
   startBtn.addEventListener('click', startGame);
   restartBtn.addEventListener('click', startGame);
 }
+

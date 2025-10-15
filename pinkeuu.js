@@ -135,7 +135,7 @@ setInterval(() => {
 
 
 
-// 🐰🎀 --- CATCH THE DOG MINI GAME ---
+// 🐶🎀 --- CATCH THE DOG MINI GAME ---
 const dogArea = document.getElementById('dog-area');
 const startBtn = document.getElementById('dog-start');
 const restartBtn = document.getElementById('dog-restart');
@@ -228,4 +228,5 @@ if (startBtn && restartBtn && dogArea) {
   startBtn.addEventListener('click', startGame);
   restartBtn.addEventListener('click', startGame);
 }
+
 

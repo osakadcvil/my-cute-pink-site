@@ -70,6 +70,20 @@ nav a:hover {
   transform: translateY(-3px) scale(1.05);
 }
 
+#contact-link {
+  background-color: #ff66a3;
+  color: white;
+  border-radius: 10px;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 0 3px #f48fb1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px #f48fb1;
+}
+
 /* ===================================
    MAIN SECTION
 =================================== */
@@ -501,5 +515,6 @@ button:active {
     padding: 1rem;
   }
 }
+
 
 

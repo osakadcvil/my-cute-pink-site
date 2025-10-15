@@ -45,24 +45,30 @@ header h1 {
    NAVIGATION
 =================================== */
 
-.navbar {
+nav {
   display: flex;
-  align-items: center; /* tetap sejajar secara vertikal */
-  justify-content: space-between; /* jarak antar tombol otomatis */
-  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #ffe0ec;
+  padding: 1rem;
+  border-bottom: 2px dashed #ffb6c1;
 }
 
-.navbar a {
+nav a {
+  position: relative;
   text-decoration: none;
-  color: white;
-  background-color: #ff66b2;
-  padding: 8px 16px;
-  border-radius: 5px;
+  color: #d63384;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
 }
 
-/* Khusus tombol contact */
-.navbar a.contact {
-  margin: 0 auto; /* menempatkan tombol ini di tengah secara horizontal */
+nav a:hover {
+  color: #fff;
+  background-color: #d63384;
+  transform: translateY(-3px) scale(1.05);
 }
 
 /* ===================================
@@ -553,6 +559,7 @@ button:active {
   margin-right: 8px;
   filter: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(468%) hue-rotate(295deg) brightness(103%) contrast(101%);
 }
+
 
 
 

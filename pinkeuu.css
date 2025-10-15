@@ -47,22 +47,22 @@ header h1 {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* tetap sejajar secara vertikal */
+  justify-content: space-between; /* jarak antar tombol otomatis */
   padding: 10px 20px;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
+  color: white;
   background-color: #ff66b2;
-  transition: background-color 0.3s;
+  padding: 8px 16px;
+  border-radius: 5px;
 }
 
-.navbar a:hover {
-  background-color: #ff3385;
+/* Khusus tombol contact */
+.navbar a.contact {
+  margin: 0 auto; /* menempatkan tombol ini di tengah secara horizontal */
 }
 
 /* ===================================
@@ -553,6 +553,7 @@ button:active {
   margin-right: 8px;
   filter: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(468%) hue-rotate(295deg) brightness(103%) contrast(101%);
 }
+
 
 
 

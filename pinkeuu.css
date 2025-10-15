@@ -124,6 +124,106 @@ main {
   color: #c71585;
 }
 
+/* 💌 CONTACT SECTION - ENVELOPE STYLE */
+#contact {
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 600px;
+  position: relative;
+}
+
+#contact h2 {
+  font-family: 'Pacifico', cursive;
+  color: #d63384;
+  margin-bottom: 0.5rem;
+}
+
+.contact-sub {
+  color: #4b2e2e;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.envelope {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  margin: 0 auto;
+  background-color: #fff0f5;
+  border: 3px dashed #ffb6c1;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(255, 182, 193, 0.4);
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.envelope:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Flap (tutup surat) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffb6c1;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  z-index: 2;
+}
+
+/* Isi surat */
+.envelope-body {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #fffafc;
+  border-top: 3px dashed #ffb6c1;
+  z-index: 1;
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kartu isi surat */
+.contact-card {
+  background-color: #ffe6f0;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 85%;
+  box-shadow: 0 3px 6px rgba(255, 182, 193, 0.3);
+  color: #4b2e2e;
+  font-size: 1rem;
+}
+
+.contact-card p {
+  margin: 0.6rem 0;
+}
+
+.contact-card a {
+  color: #d63384;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Pesan penutup */
+.contact-footer {
+  margin-top: 1.5rem;
+  color: #d63384;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+
 /* ===================================
    MUSIC PLAYER
 =================================== */
@@ -303,6 +403,16 @@ footer {
   transform: translateY(0);
 }
 
+@keyframes envelopeOpen {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+
+.envelope:hover .envelope-flap {
+  animation: envelopeOpen 0.8s ease forwards;
+  transform-origin: top;
+}
+
 /* Tombol lucu (squishy) */
 button {
   background-color: #ffb6c1;
@@ -391,4 +501,5 @@ button:active {
     padding: 1rem;
   }
 }
+
 

@@ -133,8 +133,6 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 7000);
 }, 900);
 
-
-
 // 🐶🎀 --- CATCH THE DOG MINI GAME ---
 const dogArea = document.getElementById('dog-area');
 const startBtn = document.getElementById('dog-start');
@@ -228,5 +226,25 @@ if (startBtn && restartBtn && dogArea) {
   startBtn.addEventListener('click', startGame);
   restartBtn.addEventListener('click', startGame);
 }
+
+// 🩷 CONTACT DROP DOWN
+document.addEventListener("DOMContentLoaded", () => {
+  const contactBtn = document.getElementById("contact-btn");
+  const contactMenu = document.querySelector(".contact-menu");
+
+  if (contactBtn && contactMenu) {
+    contactBtn.addEventListener("click", () => {
+      contactMenu.style.display =
+        contactMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Tutup menu jika klik di luar dropdown
+    window.addEventListener("click", (e) => {
+      if (!e.target.matches("#contact-btn")) {
+        contactMenu.style.display = "none";
+      }
+    });
+  }
+});
 
 

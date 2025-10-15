@@ -1,4 +1,4 @@
-/* 🌸 PINK EUU STYLESHEET + CATCH THE BUNNY 🌸
+/* 🌸 PINK EUU STYLESHEET + CATCH THE DOG 🌸
 /* ===================================
    RESET DASAR
 =================================== */
@@ -201,9 +201,9 @@ main {
 }
 
 /* ===================================
-   🎮 CATCH THE BUNNY GAME
+   🎮 CATCH THE DOG GAME
 =================================== */
-#catch-bunny {
+#catch-dog {
   margin: 3rem auto;
   text-align: center;
   background: #fff0f5;
@@ -217,7 +217,7 @@ main {
   overflow: hidden;
 }
 
-#catch-bunny h2 {
+#catch-dog h2 {
   font-family: 'Pacifico', cursive;
   color: #d63384;
   margin-bottom: 1rem;
@@ -235,7 +235,7 @@ main {
   cursor: pointer;
 }
 
-.bunny {
+.dog {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -244,7 +244,7 @@ main {
   transition: transform 0.1s ease;
 }
 
-.bunny:active {
+.dog:active {
   transform: scale(0.9);
 }
 
@@ -387,7 +387,8 @@ button:active {
     padding: 0.5rem;
   }
 
-  #catch-bunny {
+  #catch-dog {
     padding: 1rem;
   }
 }
+

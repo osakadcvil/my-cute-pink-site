@@ -44,46 +44,25 @@ header h1 {
 /* ===================================
    NAVIGATION
 =================================== */
-/* 🌷 Gaya umum navigasi */
-nav ul {
-  list-style: none;
+
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 2em;
-  padding: 0;
-  margin: 1em 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-/* 🌸 Gaya tombol menu */
-nav ul li a {
-  display: inline-block;
-  background-color: #ff9ecb; /* Warna dasar pink */
-  color: white;
-  padding: 0.6em 1.2em;
-  border-radius: 12px;
-  font-weight: 600;
+.navbar a {
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(255, 182, 193, 0.4);
-  transition: all 0.25s ease;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #ff66b2;
+  transition: background-color 0.3s;
 }
 
-/* 🩷 Efek hover lembut */
-nav ul li a:hover {
-  background-color: #ffb6d9; /* Warna pink lebih terang */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(255, 182, 193, 0.6);
-}
-
-/* 🌼 Tombol aktif (halaman sekarang) */
-nav ul li a.active {
-  background-color: #ff80b3;
-  box-shadow: 0 0 12px rgba(255, 160, 200, 0.7);
-}
-
-/* ✨ Ikon di dalam tombol (opsional, untuk Contact) */
-nav ul li a i {
-  margin-right: 6px;
-  vertical-align: middle;
+.navbar a:hover {
+  background-color: #ff3385;
 }
 
 /* ===================================
@@ -574,6 +553,7 @@ button:active {
   margin-right: 8px;
   filter: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(468%) hue-rotate(295deg) brightness(103%) contrast(101%);
 }
+
 
 
 
